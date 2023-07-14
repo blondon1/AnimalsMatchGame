@@ -27,13 +27,10 @@ namespace MatchGameDev
         }
 
         private void SetUpGame()
-        {
-            throw new NotImplementedException();
+        { 
+            List<string> animalEmoji = new List<string>();
         }
 
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }
