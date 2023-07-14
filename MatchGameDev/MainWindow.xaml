@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MatchGameDev"
         mc:Ignorable="d"
         Title="***Find all matching animals***" Height="450" Width="400">
-    <Grid RenderTransformOrigin="0.491,0.523">
+    <Grid x:Name="mainGrid" RenderTransformOrigin="0.491,0.523">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
