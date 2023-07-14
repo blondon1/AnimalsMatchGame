@@ -23,6 +23,17 @@ namespace MatchGameDev
         public MainWindow()
         {
             InitializeComponent();
+            SetUpGame();
+        }
+
+        private void SetUpGame()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void InitializeComponent()
+        {
+            throw new NotImplementedException();
         }
     }
 }
