@@ -30,6 +30,7 @@ namespace MatchGameDev
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += Timer_Tick;
             SetUpGame();
+
            
         }
 
@@ -62,11 +63,19 @@ namespace MatchGameDev
 
             foreach (TextBlock textBlock in mainGrid.Children.OfType<TextBlock>()) 
             { 
-                int index = random.Next(animalEmoji.Count);
-                string nextEmoji = animalEmoji[index];
-                textBlock.Text = nextEmoji;
-                animalEmoji.RemoveAt(index);
+                if(textBlock.Name != "timeTextBlock")
+                {
+                    int index = random.Next(animalEmoji.Count);
+                    string nextEmoji = animalEmoji[index];
+                    textBlock.Text = nextEmoji;
+                    animalEmoji.RemoveAt(index);
+                }
+                
             }
+
+            timer.Start();
+            tenthsOfSecondsElapsed = 0;
+            matchesFound = 0;
         }
         TextBlock lastTexblockCliked;
         bool findingMatch = false;
@@ -82,6 +91,7 @@ namespace MatchGameDev
             }
             else if (textBlock.Text == lastTexblockCliked.Text)
             {
+                matchesFound++;
                 textBlock.Visibility = Visibility.Hidden;
                 findingMatch = false;
             }
