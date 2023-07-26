@@ -21,7 +21,7 @@ namespace MatchGameDev
     /// </summary>
     public partial class MainWindow : Window
     {
-        DispatcherTimer timer = new DispatcherTimer();
+        readonly DispatcherTimer timer = new DispatcherTimer();
         int tenthsOfSecondsElapsed;
         int matchesFound;
         public MainWindow()
@@ -29,9 +29,7 @@ namespace MatchGameDev
             InitializeComponent();
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += Timer_Tick;
-            SetUpGame();
-
-           
+            SetUpGame();   
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -44,9 +42,9 @@ namespace MatchGameDev
                 timeTextBlock.Text = timeTextBlock.Text + "- Play again???";
             }
         }
-
         private void SetUpGame()
-        { 
+        {
+            ///list of emojis
             List<string> animalEmoji = new List<string>()
             {
                 "🐙","🐙",
