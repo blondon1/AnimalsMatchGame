@@ -31,7 +31,6 @@ namespace MatchGameDev
             timer.Tick += Timer_Tick;
             SetUpGame();   
         }
-
         private void Timer_Tick(object sender, EventArgs e)
         {
             tenthsOfSecondsElapsed++;
