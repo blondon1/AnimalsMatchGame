@@ -21,6 +21,7 @@ namespace MatchGameDev
     /// </summary>
     public partial class MainWindow : Window
     {
+        //dependencies
         readonly DispatcherTimer timer = new DispatcherTimer();
         int tenthsOfSecondsElapsed;
         int matchesFound;
@@ -31,6 +32,7 @@ namespace MatchGameDev
             timer.Tick += Timer_Tick;
             SetUpGame();   
         }
+        //timer funtionallity
         private void Timer_Tick(object sender, EventArgs e)
         {
             tenthsOfSecondsElapsed++;
@@ -76,7 +78,7 @@ namespace MatchGameDev
         }
         TextBlock lastTexblockCliked;
         bool findingMatch = false;
-
+        //funtionallity
         private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
         {
             TextBlock textBlock = sender as TextBlock;
@@ -98,7 +100,7 @@ namespace MatchGameDev
                 findingMatch = false;
             }
         }
-
+        //check for mouse event
         private void timeTextBlock_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (matchesFound == 8)
